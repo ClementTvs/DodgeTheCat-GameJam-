@@ -6,6 +6,7 @@ public class Cheese : MonoBehaviour
     {
         if (collider.CompareTag("Mouse"))
         {
+			Debug.Log("Olala je tape le fromage");
             Destroy(gameObject);
         }
     }
