@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ShelterScene.unity
+    guid: 82b557bc59be4a641adc778b2d31a793
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
