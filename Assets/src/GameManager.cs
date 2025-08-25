@@ -20,4 +20,9 @@ public class GameManager : MonoBehaviour
         totalCheese++;
         Debug.Log("Cheese nbr " + totalCheese);
     }
+
+    public int getCheese()
+    {
+        return totalCheese;
+    }
 }
