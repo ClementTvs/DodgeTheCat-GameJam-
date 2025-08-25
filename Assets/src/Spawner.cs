@@ -15,8 +15,8 @@ public class Spawner : MonoBehaviour
 		float x = Random.Range(spawnMin.x, spawnMax.x);
 		float y = Random.Range(spawnMin.y, spawnMax.y);
 		Vector2 spawnPos = new Vector2(x, y);
-
-		Instantiate(Cheese, spawnPos, Quaternion.identity);
+		if (!Teleportation.isInShelter)
+			Instantiate(Cheese, spawnPos, Quaternion.identity);
 	}
 
 }

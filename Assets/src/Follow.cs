@@ -21,7 +21,7 @@ public class Follow : MonoBehaviour
 
 	void Update()
 	{
-		if (canFollow)
+		if (canFollow && !Teleportation.isInShelter)
 			transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, 3 * Time.deltaTime);
 	}
 
