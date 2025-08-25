@@ -7,10 +7,10 @@ public class Spawner : MonoBehaviour
 	public Vector2 spawnMax = new Vector2(8f, 4.5f);
 	void Start()
 	{
-		InvokeRepeating("SpawnRandom", 0.1f, 1f);
+		InvokeRepeating("SpawnRandomCheese", 0.1f, 1f);
 	}
 
-	void SpawnRandom()
+	void SpawnRandomCheese()
 	{
 		float x = Random.Range(spawnMin.x, spawnMax.x);
 		float y = Random.Range(spawnMin.y, spawnMax.y);
@@ -18,4 +18,5 @@ public class Spawner : MonoBehaviour
 
 		Instantiate(Cheese, spawnPos, Quaternion.identity);
 	}
+
 }
