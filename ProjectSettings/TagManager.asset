@@ -45,5 +45,8 @@ TagManager:
   - name: Paw
     uniqueID: 2747126707
     locked: 0
+  - name: Canvas
+    uniqueID: 1288547643
+    locked: 0
   m_RenderingLayers:
   - Default

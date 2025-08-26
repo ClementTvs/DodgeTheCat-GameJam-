@@ -8,6 +8,7 @@ public class CatsPaw : MonoBehaviour
 	private SpriteRenderer sr;
 	private Color c;
 
+
 	void Awake()
 	{
 		sr = GetComponent<SpriteRenderer>();
@@ -23,11 +24,8 @@ public class CatsPaw : MonoBehaviour
 		c.a = 0.0f;
 		sr.color = c;
 	}
-	void Update()
-	{
 
-	}
-	public IEnumerator CatsPawFalls()
+	public IEnumerator CatsPawFalls1()
 	{
 		transform.position = shadow.transform.position;
 		c.a = 1f;
@@ -37,12 +35,22 @@ public class CatsPaw : MonoBehaviour
 		sr.color = c;
 	}
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
+	public IEnumerator CatsPawFalls2()
+	{
+		transform.position = shadow.transform.position;
+		c.a = 1f;
+		sr.color = c;
+		yield return new WaitForSeconds(1f);
+		c.a = 0f;
+		sr.color = c;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collider)
+	{
 		if (collider.CompareTag("Mouse") && c.a == 1f)
 		{
 			GameManager.Instance.resetCheese();
 			Debug.Log("Game OVER");
-        }
-    }
+		}
+	}
 }

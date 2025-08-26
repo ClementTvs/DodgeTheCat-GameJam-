@@ -6,10 +6,9 @@ public class Jar : MonoBehaviour
     bool ending = true;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("a");
         cheeseSaved += GameManager.Instance.getCheese();
         GameManager.Instance.resetCheese();
-        if (cheeseSaved >= 10 && ending == true)
+        if (cheeseSaved >= 1000 && ending == true)
         {
             Debug.Log("You won !");
             ending = false;
