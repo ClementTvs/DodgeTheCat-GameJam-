@@ -4,16 +4,24 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public Rigidbody2D rb;
+    private Vector2 movement;
+    private SpriteRenderer sr;
 
-    void FixedUpdate()
+    void Awake()
     {
-        // Récupère les inputs du clavier (WASD ou flèches)
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-
-        // Déplacement
-        Vector2 movement = new Vector2(moveX, moveY);
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        sr = GetComponent<SpriteRenderer>();
     }
-}
 
+	void FixedUpdate()
+	{
+		float moveX = Input.GetAxisRaw("Horizontal");
+		float moveY = Input.GetAxisRaw("Vertical");
+
+		movement = new Vector2(moveX, moveY).normalized;
+		rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+		if (movement.x < 0)
+			sr.flipX = false;
+		else if (movement.x > 0)
+			sr.flipX = true;
+	}
+}
