@@ -41,6 +41,7 @@ public class CatsPaw : MonoBehaviour
     {
 		if (collider.CompareTag("Mouse"))
 		{
+			GameManager.Instance.resetCheese();
 			Debug.Log("Game OVER");
         }
     }

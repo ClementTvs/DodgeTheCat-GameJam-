@@ -2,16 +2,17 @@ using UnityEngine;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI cheeseNbrTextCheese;
     public TextMeshProUGUI cheeseNbrTextShelter;
+    public TextMeshProUGUI cheeseNbrTextCheese;
+    public TextMeshProUGUI cheeseNbrSavedText;
 
     void Update()
     {
-        if (cheeseNbrTextCheese != null)
-        {
-            int cheeseNbr = GameManager.Instance.getCheese();
-            cheeseNbrTextCheese.text = cheeseNbr.ToString();
-            cheeseNbrTextShelter.text = cheeseNbr.ToString();
-        }
+        int cheeseNbr = GameManager.Instance.getCheese();
+        int cheeseSaved = Jar.getCheeseSaved();
+
+        cheeseNbrTextCheese.text = cheeseNbr.ToString();
+        cheeseNbrTextShelter.text = cheeseNbr.ToString();
+        cheeseNbrSavedText.text = cheeseSaved.ToString();
     }
 }

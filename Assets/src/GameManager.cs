@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int totalCheese = 0;
-    public bool where = false; 
+    public bool where = false;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(Instance);
+        // DontDestroyOnLoad(Instance);
     }
 
     public void addCheese()
@@ -25,5 +25,10 @@ public class GameManager : MonoBehaviour
     public int getCheese()
     {
         return totalCheese;
+    }
+    
+    public void resetCheese()
+    {
+        totalCheese = 0;
     }
 }
