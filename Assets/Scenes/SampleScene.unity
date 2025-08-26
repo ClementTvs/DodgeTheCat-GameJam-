@@ -453,6 +453,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1915127685800756863, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915127685800756863, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1547840589
+      objectReference: {fileID: 0}
     - target: {fileID: 3855585101109998148, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
       propertyPath: m_Name
       value: CatsPaw
@@ -1338,8 +1346,8 @@ Transform:
   m_GameObject: {fileID: 1060681394}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.76, y: 1.79, z: 0}
-  m_LocalScale: {x: 0.011696145, y: 0.0077292225, z: 1}
+  m_LocalPosition: {x: 4.76, y: 1.709, z: 0}
+  m_LocalScale: {x: 0.659347, y: 0.5514903, z: 56.37302}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597048466}
@@ -1391,7 +1399,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4526573896326321567, guid: 154e9320610097b489a3dd6738677500, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3987d9eee386bd4408aee41e31781af4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1549,8 +1557,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1211212346}
   - {fileID: 1426440682}
+  - {fileID: 1211212346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211212344
@@ -2399,7 +2407,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4526573896326321567, guid: 154e9320610097b489a3dd6738677500, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3987d9eee386bd4408aee41e31781af4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2419,9 +2427,9 @@ Transform:
   m_GameObject: {fileID: 1998718645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.3, y: 1.76, z: 0}
-  m_LocalScale: {x: 0.011696145, y: 0.0077292225, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -17.361, y: 1.709, z: 0}
+  m_LocalScale: {x: 0.659347, y: 0.5514903, z: 56.37302}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 597048466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
