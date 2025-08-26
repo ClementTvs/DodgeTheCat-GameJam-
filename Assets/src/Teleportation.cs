@@ -6,10 +6,8 @@ public class Teleportation : MonoBehaviour
     public Camera camera;
     public Transform camShelter;
     public Transform camCheese;
-
     public Transform mouseShelter;
-    public Transform mouseCheese;
-
+	public Transform mouseCheese;
 	public static bool isInShelter = false;
 
     private void OnTriggerEnter2D(Collider2D collider)
