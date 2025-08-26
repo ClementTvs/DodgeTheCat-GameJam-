@@ -18,7 +18,14 @@ public class GameManager : MonoBehaviour
 
     public void addCheese()
     {
-        totalCheese++;
+		if (Follow.timeElapsed >= 60f && Follow.timeElapsed < 120)
+			totalCheese += 2;
+		else if (Follow.timeElapsed >= 120 && Follow.timeElapsed < 180)
+			totalCheese += 3;
+		else if (Follow.timeElapsed >= 180)
+			totalCheese += 4;
+		else
+	        totalCheese++;
         Debug.Log("Cheese nbr " + totalCheese);
     }
 

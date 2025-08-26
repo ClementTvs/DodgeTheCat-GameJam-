@@ -10,6 +10,8 @@ public class Follow : MonoBehaviour
 	private Color c;
 	private bool canFollow = true;
 
+    public static float timeElapsed = 0f;
+
 	void Start()
 	{
 		sr = GetComponent<SpriteRenderer>();
@@ -21,22 +23,36 @@ public class Follow : MonoBehaviour
 
 	void Update()
 	{
+		float minSpeed = 2f;
+		float maxSpeed = 4.5f;
+		float t = Mathf.Clamp01(timeElapsed / 180f);
+		float speed = Mathf.Lerp(minSpeed, maxSpeed, t);
+
 		if (canFollow && !Teleportation.isInShelter)
-			transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, 3 * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, speed * Time.deltaTime);
+		if (!Teleportation.isInShelter)
+			timeElapsed += Time.deltaTime;
+		else
+            timeElapsed = 0f;
 	}
 
 	IEnumerator CallCatsPawRoutine()
 	{
 		while (true)
 		{
+			float minWait = 1.5f;
+			float maxWait = 2f;
+			float t = Mathf.Clamp01(timeElapsed / 180f);
+			float timeToWait = Mathf.Lerp(maxWait, minWait, t);
+
 			canFollow = false;
 			c.a = 0f;
 			sr.color = c;
-			yield return StartCoroutine(catsPaw.CatsPawFalls());
+			yield return StartCoroutine(catsPaw.CatsPawFalls1());
 			canFollow = true;
 			c.a = 0.75f;
 			sr.color = c;
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(timeToWait);
 		}
 	}
 }

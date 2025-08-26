@@ -3,8 +3,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 	public GameObject Cheese;
-	public Vector2 spawnMin = new Vector2(-8f, -4.5f);
-	public Vector2 spawnMax = new Vector2(8f, 4.5f);
+	public static Vector2 spawnMin = new Vector2(-8f, -4.5f);
+	public static Vector2 spawnMax = new Vector2(8f, 4.5f);
 	void Start()
 	{
 		InvokeRepeating("SpawnRandomCheese", 0.1f, 1f);
