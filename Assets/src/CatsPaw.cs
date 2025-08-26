@@ -39,7 +39,7 @@ public class CatsPaw : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-		if (collider.CompareTag("Mouse"))
+		if (collider.CompareTag("Mouse") && c.a == 1f)
 		{
 			GameManager.Instance.resetCheese();
 			Debug.Log("Game OVER");
