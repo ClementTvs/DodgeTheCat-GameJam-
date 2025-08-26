@@ -10,7 +10,21 @@ public class Teleportation : MonoBehaviour
 	public Transform mouseCheese;
 	public static bool isInShelter = false;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+	void Start()
+	{
+		if (GameManager.spawnInShelter == true)
+		{
+			Rigidbody2D rigidBody = GameObject.FindWithTag("Mouse").GetComponent<Rigidbody2D>();
+
+			GameManager.spawnInShelter = false;
+			isInShelter = true;
+			GameManager.Instance.where = true;
+			rigidBody.position = mouseShelter.position;
+			camera.transform.position = camShelter.position;
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.CompareTag("Mouse"))
 		{
