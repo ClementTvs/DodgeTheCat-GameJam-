@@ -12,6 +12,7 @@ public class Teleportation : MonoBehaviour
 
 	void Start()
 	{
+		isInShelter = false;
 		if (GameManager.spawnInShelter == true)
 		{
 			Rigidbody2D rigidBody = GameObject.FindWithTag("Mouse").GetComponent<Rigidbody2D>();
