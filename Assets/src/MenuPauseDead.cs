@@ -16,16 +16,16 @@ public class MenuPauseDead : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Teleportation.isInShelter == false)
-            {
-                pauseUICheese.SetActive(true);
-                Time.timeScale = 0f;
+			if (Teleportation.isInShelter == false)
+			{
+				pauseUICheese.SetActive(true);
+				Time.timeScale = 0f;
             }
-            else if (Teleportation.isInShelter == true)
-            {
-                pauseUIShelter.SetActive(true);
-                Time.timeScale = 0f;
-            }
+			else if (Teleportation.isInShelter == true)
+			{
+				pauseUIShelter.SetActive(true);
+				Time.timeScale = 0f;
+			}
         }
     }
 

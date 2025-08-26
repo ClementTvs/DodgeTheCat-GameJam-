@@ -42,7 +42,6 @@ public class DiagonalShadow : MonoBehaviour
         if (canFollow && canMove)
         {
             transform.Translate(direction * speed * Time.deltaTime);
-
             Vector2 pos = transform.position;
             if (pos.x <= -8 || pos.x >= 8)
                 direction.x *= -1;
