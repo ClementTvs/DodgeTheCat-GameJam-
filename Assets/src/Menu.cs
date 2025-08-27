@@ -7,12 +7,14 @@ public class Menu : MonoBehaviour
     {
         GameManager.spawnInShelter = false;
         SceneManager.LoadScene("SampleScene");
+        VolumeManager.Instance.audioSource.Stop();
     }
 
     public void GoToShelter()
     {
         GameManager.spawnInShelter = true;
         SceneManager.LoadScene("SampleScene");
+        VolumeManager.Instance.audioSource.Stop();
     }
 
     public void Quit()
