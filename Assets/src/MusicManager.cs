@@ -31,9 +31,9 @@ public class MusicManager : MonoBehaviour
 
         audioSource.Stop();
         if (cheeseMusic == newClip)
-            audioSource.volume = 0.4f;
+            audioSource.volume = VolumeManager.Instance.audioSource.volume;
         else
-            audioSource.volume = 0.7f;
+            audioSource.volume = VolumeManager.Instance.audioSource.volume;
         audioSource.clip = newClip;
         audioSource.Play();
     }
