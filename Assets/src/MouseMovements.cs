@@ -7,10 +7,14 @@ public class PlayerMovement : MonoBehaviour
 	public AudioClip sound;
 	private Vector2 movement;
 	private SpriteRenderer sr;
+	public Sprite mousetopBot;
+	public Sprite mouseLeftRight;
+
 
 	void Awake()
 	{
 		sr = GetComponent<SpriteRenderer>();
+		sr.sprite = mousetopBot;
 	}
 
 	void FixedUpdate()
@@ -20,10 +24,28 @@ public class PlayerMovement : MonoBehaviour
 
 		movement = new Vector2(moveX, moveY).normalized;
 		rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+		if (movement.y < 0)
+		{
+			sr.sprite = mousetopBot;
+			sr.flipY = false;
+		}
+		if (movement.y > 0)
+		{
+			sr.sprite = mousetopBot;
+			sr.flipY = true;
+		}
 		if (movement.x < 0)
+		{
+			sr.sprite = mouseLeftRight;
 			sr.flipX = false;
-		else if (movement.x > 0)
+			sr.flipY = false;
+		}
+		if (movement.x > 0)
+		{
+			sr.sprite = mouseLeftRight;
 			sr.flipX = true;
+			sr.flipY = false;
+		}
 	}
 
 	void OnMouseDown()
