@@ -630,6 +630,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 481190520}
     - target: {fileID: 8032048606890980781, guid: 23e9e7c356a33fb4194944e2b9cc5d3e, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: edfbe6d3aebb6d44381322490b54565f, type: 3}
+    - target: {fileID: 8032048606890980781, guid: 23e9e7c356a33fb4194944e2b9cc5d3e, type: 3}
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
@@ -1055,6 +1059,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
+      propertyPath: stomp
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bc19b4acb3322649b78a4d33d5b02b4, type: 3}
     - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
       propertyPath: deadUI
       value: 
@@ -3413,6 +3421,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
+      propertyPath: stomp
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bc19b4acb3322649b78a4d33d5b02b4, type: 3}
+    - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
       propertyPath: deadUI
       value: 
       objectReference: {fileID: 2115877858}
@@ -5547,6 +5559,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1013408140}
     m_Modifications:
+    - target: {fileID: -2304022078257511922, guid: 0b6a0cab4ebc75a4ab4c2ace0ebbfd34, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7dc302454e666974dbd4cc5e163b6acf, type: 3}
     - target: {fileID: 1292035860797178605, guid: 0b6a0cab4ebc75a4ab4c2ace0ebbfd34, type: 3}
       propertyPath: m_Name
       value: Jar
