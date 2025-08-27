@@ -4,16 +4,24 @@ public class Jar : MonoBehaviour
 {
     static private int cheeseSaved = 0;
     bool ending = true;
-    private void OnCollisionEnter2D(Collision2D collision)
+  
+    private void Awake()
     {
-        cheeseSaved += GameManager.Instance.getCheese();
-        GameManager.Instance.resetCheese();
-        if (cheeseSaved >= 1000 && ending == true)
-        {
-            Debug.Log("You won !");
-            ending = false;
-        }
+        cheeseSaved = PlayerPrefs.GetInt("Jar cheese", 0);
     }
+  
+    private void OnCollisionEnter2D(Collision2D collision)
+	{
+		cheeseSaved += GameManager.Instance.getCheese();
+		PlayerPrefs.SetInt("Jar cheese", cheeseSaved);
+		PlayerPrefs.Save();
+		GameManager.Instance.resetCheese();
+		if (cheeseSaved >= 1000 && ending == true)
+		{
+			Debug.Log("You won !");
+			ending = false;
+		}
+	}
 
     static public int getCheeseSaved()
     {
