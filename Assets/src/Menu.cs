@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour
     public void GoToCheese()
     {
         GameManager.spawnInShelter = false;
+        Teleportation.isInShelter = false;
         SceneManager.LoadScene("SampleScene");
         VolumeManager.Instance.audioSource.Stop();
     }

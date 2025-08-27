@@ -9,7 +9,7 @@ public class CatsPaw : MonoBehaviour
 	private Color c;
     public GameObject deadUI;
 	public AudioClip stomp;
-
+	public Transform spawn;
 
 	void Awake()
 	{
@@ -17,6 +17,12 @@ public class CatsPaw : MonoBehaviour
 		c = sr.color;
 		c.a = 0.0f;
 		sr.color = c;
+	}
+
+	void Update()
+	{
+		if (Teleportation.isInShelter == true)
+			shadow.transform.position = spawn.position;
 	}
 
 	void Start()
@@ -32,9 +38,12 @@ public class CatsPaw : MonoBehaviour
 		transform.position = shadow.transform.position;
 		c.a = 1f;
 		sr.color = c;
+
 		if (Teleportation.isInShelter == false)
 			AudioSource.PlayClipAtPoint(stomp, transform.position);
 		yield return new WaitForSeconds(1f);
+		if (Teleportation.isInShelter == true)
+			shadow.transform.position = spawn.position;
 		c.a = 0f;
 		sr.color = c;
 	}
@@ -47,6 +56,7 @@ public class CatsPaw : MonoBehaviour
 		if (Teleportation.isInShelter == false)
 			AudioSource.PlayClipAtPoint(stomp, transform.position);
 		yield return new WaitForSeconds(1f);
+
 		c.a = 0f;
 		sr.color = c;
 	}

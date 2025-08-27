@@ -9,6 +9,7 @@ public class Follow : MonoBehaviour
 	private SpriteRenderer sr;
 	private Color c;
 	private bool canFollow = true;
+	public Transform spawn;
 
     public static float timeElapsed = 0f;
 
@@ -33,7 +34,9 @@ public class Follow : MonoBehaviour
 		if (!Teleportation.isInShelter)
 			timeElapsed += Time.deltaTime;
 		else
-            timeElapsed = 0f;
+			timeElapsed = 0f;
+		if (Teleportation.isInShelter == true)
+			catsPaw.transform.position = spawn.position;
 	}
 
 	IEnumerator CallCatsPawRoutine()
