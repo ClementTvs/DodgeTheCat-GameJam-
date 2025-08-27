@@ -13,25 +13,28 @@ public class MenuPauseDead : MonoBehaviour
             else
                 pauseUIShelter.SetActive(false);
             Time.timeScale = 1f;
+            MusicManager.Instance.getBackVolumeMusic();
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-			if (Teleportation.isInShelter == false)
-			{
-				pauseUICheese.SetActive(true);
-				Time.timeScale = 0f;
+            if (Teleportation.isInShelter == false)
+            {
+                pauseUICheese.SetActive(true);
+                Time.timeScale = 0f;
             }
-			else if (Teleportation.isInShelter == true)
-			{
-				pauseUIShelter.SetActive(true);
-				Time.timeScale = 0f;
-			}
+            else if (Teleportation.isInShelter == true)
+            {
+                pauseUIShelter.SetActive(true);
+                Time.timeScale = 0f;
+            }
+            MusicManager.Instance.lowerVolumeMusic();
         }
     }
 
     public void goToMenu()
     {
         Time.timeScale = 1f;
+        MusicManager.Instance.getBackVolumeMusic();
         if (Teleportation.isInShelter == false)
             pauseUICheese.SetActive(false);
         else
@@ -45,6 +48,7 @@ public class MenuPauseDead : MonoBehaviour
             pauseUICheese.SetActive(false);
         else
             pauseUIShelter.SetActive(false);
+        MusicManager.Instance.getBackVolumeMusic();
         Time.timeScale = 1f;
     }
 }

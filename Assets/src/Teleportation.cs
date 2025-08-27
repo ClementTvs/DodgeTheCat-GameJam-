@@ -9,10 +9,10 @@ public class Teleportation : MonoBehaviour
     public Transform mouseShelter;
 	public Transform mouseCheese;
 	public static bool isInShelter = false;
+    // private AudioSource audioSource;
 
 	void Start()
 	{
-		isInShelter = false;
 		if (GameManager.spawnInShelter == true)
 		{
 			Rigidbody2D rigidBody = GameObject.FindWithTag("Mouse").GetComponent<Rigidbody2D>();
@@ -23,6 +23,8 @@ public class Teleportation : MonoBehaviour
 			rigidBody.position = mouseShelter.position;
 			camera.transform.position = camShelter.position;
 		}
+		// audioSource = GetComponent<AudioSource>();
+
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
@@ -37,6 +39,8 @@ public class Teleportation : MonoBehaviour
 				GameManager.Instance.where = true;
 				rigidBody.position = mouseShelter.position;
 				camera.transform.position = camShelter.position;
+
+				MusicManager.Instance.PlayShelterMusic();
 			}
 			else
 			{
@@ -44,6 +48,8 @@ public class Teleportation : MonoBehaviour
 				GameManager.Instance.where = false;
 				rigidBody.position = mouseCheese.position;
 				camera.transform.position = camCheese.position;
+
+				MusicManager.Instance.PlayCheeseMusic();
 			}
 		}
 	}
