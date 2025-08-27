@@ -6,11 +6,13 @@ public class VolumeManager : MonoBehaviour
     static public VolumeManager Instance;
     public Slider slider;
     public AudioSource audioSource;
-    static private float volume = 0.5f;
+    static public float volume;
 
     void Start()
     {
+
         Instance = this;
+        volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         slider.value = volume;
         audioSource.volume = volume;
 
@@ -24,5 +26,7 @@ public class VolumeManager : MonoBehaviour
     {
         audioSource.volume = value;
         volume = value;
+        PlayerPrefs.SetFloat("Volume", value);
+		PlayerPrefs.Save();
     }
 }
