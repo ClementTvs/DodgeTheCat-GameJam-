@@ -1,2 +1,18 @@
 fileFormatVersion: 2
 guid: eca1f9c144b5ee649a10be3c04161f3a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cheeseNbrTextShelter: {instanceID: 0}
+  - cheeseNbrTextCheese: {instanceID: 0}
+  - cheeseNbrSavedText: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - x2Mult: {fileID: 5655120301410879017, guid: 67a56a9bf268e9e4cbf6125391808faf, type: 3}
+  - x3Mult: {fileID: 7898552588069883707, guid: 101dca700a8b41e41b8e5271dd64c95d, type: 3}
+  - x4Mult: {fileID: 5116971496761372654, guid: ded1959ccf0c8594eb5061edf432d3e8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
