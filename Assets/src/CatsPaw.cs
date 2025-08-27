@@ -7,6 +7,7 @@ public class CatsPaw : MonoBehaviour
 	public GameObject shadow;
 	private SpriteRenderer sr;
 	private Color c;
+    public GameObject deadUI;
 
 
 	void Awake()
@@ -45,12 +46,15 @@ public class CatsPaw : MonoBehaviour
 		sr.color = c;
 	}
 
-	private void OnTriggerEnter2D(Collider2D collider)
+	private void OnTriggerStay2D(Collider2D collider)
 	{
 		if (collider.CompareTag("Mouse") && c.a == 1f)
 		{
 			GameManager.Instance.resetCheese();
+			deadUI.SetActive(true);
 			Debug.Log("Game OVER");
+			Time.timeScale = 0f;
+			MusicManager.Instance.lowerVolumeMusic();
 		}
 	}
 }

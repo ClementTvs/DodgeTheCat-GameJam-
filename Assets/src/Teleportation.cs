@@ -3,16 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class Teleportation : MonoBehaviour
 {
-    public Camera camera;
-    public Transform camShelter;
-    public Transform camCheese;
-    public Transform mouseShelter;
+	static public Teleportation Instance;
+	public Camera camera;
+	public Transform camShelter;
+	public Transform camCheese;
+	public Transform mouseShelter;
 	public Transform mouseCheese;
 	public static bool isInShelter = false;
-    // private AudioSource audioSource;
+	// private AudioSource audioSource;
 
 	void Start()
 	{
+		Instance = this;
 		if (GameManager.spawnInShelter == true)
 		{
 			Rigidbody2D rigidBody = GameObject.FindWithTag("Mouse").GetComponent<Rigidbody2D>();
@@ -52,5 +54,16 @@ public class Teleportation : MonoBehaviour
 				MusicManager.Instance.PlayCheeseMusic();
 			}
 		}
+	}
+
+	public void shelter()
+	{
+		Rigidbody2D rigidBody = GameObject.FindWithTag("Mouse").GetComponent<Rigidbody2D>();
+
+		GameManager.spawnInShelter = false;
+		isInShelter = true;
+		GameManager.Instance.where = true;
+		rigidBody.position = mouseShelter.position;
+		camera.transform.position = camShelter.position;
 	}
 }

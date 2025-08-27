@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6124574996883318886}
   - component: {fileID: 1915127685800756863}
   - component: {fileID: 6255675298264996979}
-  - component: {fileID: 8951477633188200056}
+  - component: {fileID: 609659205491477710}
   m_Layer: 0
   m_Name: CatsPaw
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1930842143
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b9219181ac714ce4985f286f650a9a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,8 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   CatsPawGO: {fileID: 3855585101109998148}
   shadow: {fileID: 0}
---- !u!70 &8951477633188200056
-CapsuleCollider2D:
+  deadUI: {fileID: 0}
+--- !u!60 &609659205491477710
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,10 +137,53 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.11, y: 0.15}
-  m_Size: {x: 1.1, y: 1.5}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.44608626, y: -0.12430419}
+      - {x: 0.58, y: 0.14999999}
+      - {x: 0.61, y: 0.24}
+      - {x: 0.63, y: 0.29}
+      - {x: 0.63, y: 0.5}
+      - {x: 0.58, y: 0.78}
+      - {x: 0.53, y: 0.78999996}
+      - {x: 0.5, y: 0.78}
+      - {x: 0.42, y: 0.79999995}
+      - {x: 0.29, y: 1.05}
+      - {x: 0.26, y: 1.05}
+      - {x: 0.24, y: 1.04}
+      - {x: 0.07, y: 0.83}
+      - {x: -0.03, y: 1.02}
+      - {x: -0.07, y: 1}
+      - {x: -0.19, y: 0.75}
+      - {x: -0.21, y: 0.68}
+      - {x: -0.37, y: 0.68}
+      - {x: -0.41, y: 0.48999998}
+      - {x: -0.41, y: 0.28}
+      - {x: -0.39999998, y: 0.19999999}
+      - {x: -0.34, y: 0.07}
+      - {x: -0.29999998, y: -0.01}
+      - {x: -0.30439305, y: -0.012320697}
+      - {x: -0.24046266, y: -0.11578816}
+      - {x: -0.16240208, y: -0.22803314}
+      - {x: -0.098915964, y: -0.28642023}
+      - {x: 0.045204267, y: -0.3421181}
+      - {x: 0.17914318, y: -0.3440829}
+      - {x: 0.32819235, y: -0.29606488}
+      - {x: 0.4420651, y: -0.13402164}
+      - {x: 0.4241301, y: -0.15793507}
+      - {x: 0.45999998, y: -0.14}
+  m_UseDelaunayMesh: 0
