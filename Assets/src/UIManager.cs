@@ -44,8 +44,8 @@ public class UIManager : MonoBehaviour
 		if (Teleportation.isInShelter)
 		{
 			x2Mult.gameObject.SetActive(false);
-       		x3Mult.gameObject.SetActive(false);
-        	x4Mult.gameObject.SetActive(false);
+			x3Mult.gameObject.SetActive(false);
+			x4Mult.gameObject.SetActive(false);
 		}
 	}
 

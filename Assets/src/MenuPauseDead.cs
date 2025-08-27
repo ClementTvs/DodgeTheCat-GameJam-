@@ -36,6 +36,7 @@ public class MenuPause : MonoBehaviour
     public void goToMenu()
     {
         Time.timeScale = 1f;
+		Follow.timeElapsed = 0f;
         MusicManager.Instance.getBackVolumeMusic();
         if (Teleportation.isInShelter == false)
             pauseUICheese.SetActive(false);
