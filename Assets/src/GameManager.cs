@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 		Instance = this;
-  		totalCheese = PlayerPrefs.GetInt("total cheese", 0); 
 		DontDestroyOnLoad(Instance);
 	}
 
@@ -41,8 +40,6 @@ public class GameManager : MonoBehaviour
 		else
 			totalCheese++;
 		Debug.Log("Cheese nbr " + totalCheese);
-	    PlayerPrefs.SetInt("total cheese", totalCheese);
-    	PlayerPrefs.Save();
 	}
 
 	public int getCheese()
@@ -57,7 +54,6 @@ public class GameManager : MonoBehaviour
 
 	void OnApplicationQuit()
 	{
-		PlayerPrefs.SetInt("total cheese", totalCheese);
 		PlayerPrefs.SetInt("Jar cheese", Jar.getCheeseSaved());
 		PlayerPrefs.Save();
 	}
