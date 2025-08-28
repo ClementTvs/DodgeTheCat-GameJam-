@@ -2851,6 +2851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Cheese: {fileID: 6760334736096907094, guid: 8b5ed00a15c4f2e4a9a18377a0fe8099, type: 3}
+  BigCheese: {fileID: 6760334736096907094, guid: bf745a131fd20af42ad970e0945b1edf, type: 3}
+  SpeedCheese: {fileID: 6760334736096907094, guid: 4fdf5aedfcf7e3c439d4e0e2c520341a, type: 3}
+  MultCheese: {fileID: 6760334736096907094, guid: 85da5bba4b2c1784dbf3100fb061eb3d, type: 3}
+  LastCheese: {fileID: 6760334736096907094, guid: b88073b7ae163074b85102dc1bddf72c, type: 3}
 --- !u!4 &1211212346
 Transform:
   m_ObjectHideFlags: 0

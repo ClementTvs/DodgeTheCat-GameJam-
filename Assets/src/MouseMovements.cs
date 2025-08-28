@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float speed = 5f;
+	public static float speed = 5f;
 	public Rigidbody2D rb;
 	public AudioClip sound;
 	private Vector2 movement;
@@ -10,17 +10,22 @@ public class PlayerMovement : MonoBehaviour
 	public Sprite mousetopBot;
 	public Sprite mouseLeftRight;
 
-    public Collider2D topBotCollider;
-    public Collider2D leftRightCollider;
+	public Collider2D topBotCollider;
+	public Collider2D leftRightCollider;
 
 	void Awake()
 	{
 		sr = GetComponent<SpriteRenderer>();
 		sr.sprite = mousetopBot;
 		topBotCollider.enabled = true;
-        leftRightCollider.enabled = false;
+		leftRightCollider.enabled = false;
 	}
 
+	void Update()
+	{
+		if (Teleportation.isInShelter)
+			speed = 5f;
+	}
 	void FixedUpdate()
 	{
 		float moveX = Input.GetAxisRaw("Horizontal");
