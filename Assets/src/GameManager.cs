@@ -7,6 +7,16 @@ public class GameManager : MonoBehaviour
 	public bool where = false;
 	static public bool spawnInShelter;
 
+
+	void Update()
+	{
+		if (Follow.timeElapsed < 60)
+		{
+			UIManager ui = Object.FindFirstObjectByType<UIManager>();
+			ui.handleMult(1);
+		}
+	}
+
 	private void Awake()
 	{
 		if (Instance != null && Instance != this)
@@ -22,7 +32,7 @@ public class GameManager : MonoBehaviour
 	{
 		UIManager ui = Object.FindFirstObjectByType<UIManager>();
 
-		if (Follow.timeElapsed >= 60f && Follow.timeElapsed < 120)
+		if (Follow.timeElapsed >= 60 && Follow.timeElapsed < 120)
 		{
 			totalCheese += 2;
 			ui.handleMult(2);

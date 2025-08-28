@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 	public TextMeshProUGUI cheeseNbrTextCheese;
 	public TextMeshProUGUI cheeseNbrSavedText;
 	public TextMeshProUGUI timerText;
+	public TextMeshProUGUI x1Mult;
 	public TextMeshProUGUI x2Mult;
 	public TextMeshProUGUI x3Mult;
 	public TextMeshProUGUI x4Mult;
@@ -13,10 +14,12 @@ public class UIManager : MonoBehaviour
 
 	void Start()
 	{
+        x1Mult = GameObject.Find("x1Mult").GetComponent<TextMeshProUGUI>();
         x2Mult = GameObject.Find("x2Mult").GetComponent<TextMeshProUGUI>();
         x3Mult = GameObject.Find("x3Mult").GetComponent<TextMeshProUGUI>();
         x4Mult = GameObject.Find("x4Mult").GetComponent<TextMeshProUGUI>();
 
+        x1Mult.gameObject.SetActive(false);
         x2Mult.gameObject.SetActive(false);
         x3Mult.gameObject.SetActive(false);
         x4Mult.gameObject.SetActive(false);
@@ -43,6 +46,7 @@ public class UIManager : MonoBehaviour
 			timeElapsed = 0f;
 		if (Teleportation.isInShelter)
 		{
+			x1Mult.gameObject.SetActive(false);
 			x2Mult.gameObject.SetActive(false);
 			x3Mult.gameObject.SetActive(false);
 			x4Mult.gameObject.SetActive(false);
@@ -51,12 +55,16 @@ public class UIManager : MonoBehaviour
 
 	public void handleMult(int multToActivate)
 	{
+		x1Mult.gameObject.SetActive(false);
 		x2Mult.gameObject.SetActive(false);
 		x3Mult.gameObject.SetActive(false);
 		x4Mult.gameObject.SetActive(false);
 
 		switch (multToActivate)
 		{
+			case 1:
+				x1Mult.gameObject.SetActive(true);
+				break;
 			case 2:
 				x2Mult.gameObject.SetActive(true);
 				break;
