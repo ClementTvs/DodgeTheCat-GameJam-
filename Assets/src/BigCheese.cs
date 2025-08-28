@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cheese : MonoBehaviour
+public class BigCheese : MonoBehaviour
 {
     public AudioClip pop;
     private void OnTriggerEnter2D(Collider2D collider)
@@ -8,7 +8,7 @@ public class Cheese : MonoBehaviour
         if (collider.CompareTag("Mouse"))
         {
             AudioSource.PlayClipAtPoint(pop, transform.position);
-            GameManager.Instance.addCheese(1, false);
+            GameManager.Instance.addCheese(10, false);
             Destroy(gameObject);
         }
     }

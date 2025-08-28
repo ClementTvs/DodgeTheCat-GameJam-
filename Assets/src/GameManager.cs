@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
 	private int totalCheese = 0;
 	public bool where = false;
 	static public bool spawnInShelter;
+	private float tempMultiplier = 1f;
+    private Coroutine tempMultCoroutine;
 
 
 	void Update()
@@ -28,29 +31,51 @@ public class GameManager : MonoBehaviour
 		DontDestroyOnLoad(Instance);
 	}
 
-	public void addCheese()
-	{
-		UIManager ui = Object.FindFirstObjectByType<UIManager>();
+    public void addCheese(int amount, bool lastCheese)
+    {
+        UIManager ui = Object.FindFirstObjectByType<UIManager>();
+        int baseMult = 1;
+		int finalMult = 1;
 
-		if (Follow.timeElapsed >= 60 && Follow.timeElapsed < 120)
+        if (Follow.timeElapsed >= 60f && Follow.timeElapsed < 120)
 		{
-			totalCheese += 2;
-			ui.handleMult(2);
+			baseMult = 2;
 		}
 		else if (Follow.timeElapsed >= 120 && Follow.timeElapsed < 180)
 		{
-			totalCheese += 3;
-			ui.handleMult(3);
+			baseMult = 3;
 		}
 		else if (Follow.timeElapsed >= 180)
 		{
-			totalCheese += 4;
-			ui.handleMult(4);
+			baseMult = 4;
 		}
+		if (!Teleportation.isInShelter)
+			finalMult = Mathf.RoundToInt(baseMult * tempMultiplier);
 		else
-			totalCheese++;
-		Debug.Log("Cheese nbr " + totalCheese);
-	}
+			finalMult = baseMult;
+        totalCheese += amount * finalMult;
+        ui.handleMult(baseMult);
+        if (lastCheese)
+            totalCheese = Mathf.RoundToInt(totalCheese * 1.5f);
+    }
+
+    public void ActivateTempMultiplier()
+    {
+        if (tempMultCoroutine != null)
+        {
+            StopCoroutine(tempMultCoroutine);
+        }
+        
+        tempMultCoroutine = StartCoroutine(TempMultiplierCoroutine());
+    }
+
+    private IEnumerator TempMultiplierCoroutine()
+    {
+        tempMultiplier = 2f;
+        yield return new WaitForSeconds(20f);
+        tempMultiplier = 1f;
+        tempMultCoroutine = null;
+    }
 
 	public int getCheese()
 	{
