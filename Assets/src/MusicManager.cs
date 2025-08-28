@@ -9,16 +9,16 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
-        if (Follow.timeElapsed >= 5f && Follow.timeElapsed < 10)
+        if (Follow.timeElapsed >= 60f && Follow.timeElapsed < 120)
         {
             audioSource.pitch = 1.04f;
         }
-        else if (Follow.timeElapsed >= 10 && Follow.timeElapsed < 15)
+        else if (Follow.timeElapsed >= 120 && Follow.timeElapsed < 180)
         {
             audioSource.pitch = 1.07f;
 
         }
-        else if (Follow.timeElapsed >= 15)
+        else if (Follow.timeElapsed >= 180)
         {
             audioSource.pitch = 1.1f;
         }
