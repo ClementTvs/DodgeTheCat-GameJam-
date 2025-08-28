@@ -7,6 +7,24 @@ public class MusicManager : MonoBehaviour
     public AudioClip cheeseMusic;
     private AudioSource audioSource;
 
+    void Update()
+    {
+        if (Follow.timeElapsed >= 5f && Follow.timeElapsed < 10)
+        {
+            audioSource.pitch = 1.04f;
+        }
+        else if (Follow.timeElapsed >= 10 && Follow.timeElapsed < 15)
+        {
+            audioSource.pitch = 1.07f;
+
+        }
+        else if (Follow.timeElapsed >= 15)
+        {
+            audioSource.pitch = 1.1f;
+        }
+        else
+            audioSource.pitch = 1f;
+    }
     void Awake()
     {
         if (Instance == null)
