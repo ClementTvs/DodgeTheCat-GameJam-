@@ -10,11 +10,15 @@ public class PlayerMovement : MonoBehaviour
 	public Sprite mousetopBot;
 	public Sprite mouseLeftRight;
 
+    public Collider2D topBotCollider;
+    public Collider2D leftRightCollider;
 
 	void Awake()
 	{
 		sr = GetComponent<SpriteRenderer>();
 		sr.sprite = mousetopBot;
+		topBotCollider.enabled = true;
+        leftRightCollider.enabled = false;
 	}
 
 	void FixedUpdate()
@@ -28,24 +32,34 @@ public class PlayerMovement : MonoBehaviour
 		{
 			sr.sprite = mousetopBot;
 			sr.flipY = false;
+			SwitchCollider(true);
 		}
 		if (movement.y > 0)
 		{
 			sr.sprite = mousetopBot;
 			sr.flipY = true;
+			SwitchCollider(true);
 		}
 		if (movement.x < 0)
 		{
 			sr.sprite = mouseLeftRight;
 			sr.flipX = false;
 			sr.flipY = false;
+			SwitchCollider(false);
 		}
 		if (movement.x > 0)
 		{
 			sr.sprite = mouseLeftRight;
 			sr.flipX = true;
 			sr.flipY = false;
+			SwitchCollider(false);
 		}
+	}
+
+	void SwitchCollider(bool topBot)
+	{
+		topBotCollider.enabled = topBot;
+		leftRightCollider.enabled = !topBot;
 	}
 
 	void OnMouseDown()
