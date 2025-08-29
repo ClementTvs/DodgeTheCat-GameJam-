@@ -16,7 +16,6 @@ public class MusicManager : MonoBehaviour
         else if (Follow.timeElapsed >= 120 && Follow.timeElapsed < 180)
         {
             audioSource.pitch = 1.07f;
-
         }
         else if (Follow.timeElapsed >= 180)
         {

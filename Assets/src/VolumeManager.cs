@@ -17,8 +17,8 @@ public class VolumeManager : MonoBehaviour
         audioSource.volume = volume;
 
         slider.onValueChanged.AddListener(SetVolume);
-        DontDestroyOnLoad(Instance);
         DontDestroyOnLoad(audioSource);
+        DontDestroyOnLoad(Instance);
 
     }
 

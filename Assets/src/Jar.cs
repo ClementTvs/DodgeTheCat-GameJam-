@@ -15,12 +15,7 @@ public class Jar : MonoBehaviour
 	{
         if (GameManager.Instance.getCheese() > 0)
         {
-            if (VolumeManager.volume >= 0.2f)
-                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.4f);
-            else if (VolumeManager.volume >= 0.1f)
-                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.3f);
-            else
-                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume);
+            AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume * 3f);
         }
 		cheeseSaved += GameManager.Instance.getCheese();
 		PlayerPrefs.SetInt("Jar cheese", cheeseSaved);
