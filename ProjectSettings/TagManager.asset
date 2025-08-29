@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Text
   - 
   - 
   - 
@@ -48,6 +48,21 @@ TagManager:
     locked: 0
   - name: Canvas
     uniqueID: 1288547643
+    locked: 0
+  - name: Carpet
+    uniqueID: 4072620367
+    locked: 0
+  - name: Mouse
+    uniqueID: 833836385
+    locked: 0
+  - name: ObjectShelter
+    uniqueID: 186545763
+    locked: 0
+  - name: Wife
+    uniqueID: 3465059371
+    locked: 0
+  - name: Paper
+    uniqueID: 2440639039
     locked: 0
   m_RenderingLayers:
   - Default
