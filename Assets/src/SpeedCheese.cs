@@ -3,14 +3,19 @@ using System.Collections;
 
 public class SpeedCheese : MonoBehaviour
 {
-    public AudioClip pop;
+    public AudioClip electrical;
     
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Mouse"))
         {
             StartCoroutine(SpeedBoostAndDestroy());
-            AudioSource.PlayClipAtPoint(pop, transform.position);
+            if (VolumeManager.volume >= 0.2f)
+                AudioSource.PlayClipAtPoint(electrical, transform.position, VolumeManager.volume + 0.4f);
+            else if (VolumeManager.volume >= 0.1f)
+                AudioSource.PlayClipAtPoint(electrical, transform.position, VolumeManager.volume + 0.3f);
+            else
+                AudioSource.PlayClipAtPoint(electrical, transform.position, VolumeManager.volume);
             GameManager.Instance.addCheese(1, false);
         }
     }

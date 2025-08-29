@@ -14,7 +14,14 @@ public class Jar : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
 	{
         if (GameManager.Instance.getCheese() > 0)
-            AudioSource.PlayClipAtPoint(sound, transform.position);
+        {
+            if (VolumeManager.volume >= 0.2f)
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.4f);
+            else if (VolumeManager.volume >= 0.1f)
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.3f);
+            else
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume);
+        }
 		cheeseSaved += GameManager.Instance.getCheese();
 		PlayerPrefs.SetInt("Jar cheese", cheeseSaved);
 		PlayerPrefs.Save();

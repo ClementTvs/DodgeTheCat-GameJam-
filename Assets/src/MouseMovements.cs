@@ -69,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		AudioSource.PlayClipAtPoint(sound, transform.position);
+		    if (VolumeManager.volume >= 0.2f)
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.4f);
+            else if (VolumeManager.volume >= 0.1f)
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume + 0.3f);
+            else
+                AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume);;
 	}
 }
