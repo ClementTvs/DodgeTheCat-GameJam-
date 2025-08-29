@@ -105,11 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658a841cdf1c99847bfb05b63397297d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseMovements
-  speed: 5
   rb: {fileID: 0}
   sound: {fileID: 0}
   mousetopBot: {fileID: 0}
   mouseLeftRight: {fileID: 0}
+  topBotCollider: {fileID: 0}
+  leftRightCollider: {fileID: 0}
 --- !u!50 &8059988586917514991
 Rigidbody2D:
   serializedVersion: 5
