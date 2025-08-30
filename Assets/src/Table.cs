@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
+    public AudioClip sound;
     public GameObject paper;
     public GameObject good100;
     public GameObject good300;
@@ -9,6 +10,10 @@ public class Table : MonoBehaviour
     public GameObject good750;
     public GameObject good1000;
 
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+            AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume * 3f);
+    }
     private void OnCollisionStay2D(Collision2D collider)
     {
         paper.SetActive(true);

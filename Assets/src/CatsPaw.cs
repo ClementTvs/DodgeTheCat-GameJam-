@@ -41,7 +41,7 @@ public class CatsPaw : MonoBehaviour
 
 		if (Teleportation.isInShelter == false)
 		{
-			AudioSource.PlayClipAtPoint(stomp, transform.position, VolumeManager.volume * 3f);
+			AudioSource.PlayClipAtPoint(stomp, transform.position, VolumeManager.volume * 4f);
 		}
 		yield return new WaitForSeconds(1f);
 		if (Teleportation.isInShelter == true)
@@ -57,7 +57,7 @@ public class CatsPaw : MonoBehaviour
 		sr.color = c;
 		if (Teleportation.isInShelter == false)
 		{
-			AudioSource.PlayClipAtPoint(stomp, transform.position, VolumeManager.volume * 3f);
+			AudioSource.PlayClipAtPoint(stomp, transform.position, VolumeManager.volume * 4f);
 		}
 		yield return new WaitForSeconds(1f);
 

@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25de6f86060e94a4598f492eb66fb631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Table
+  sound: {fileID: 8300000, guid: a46b1e5648221c74783e560f25e0c0f0, type: 3}
   paper: {fileID: 176006957}
   good100: {fileID: 1346847741}
   good300: {fileID: 120221950}

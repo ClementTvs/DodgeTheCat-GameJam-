@@ -14,7 +14,7 @@ public class VolumeManager : MonoBehaviour
         Instance = this;
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         slider.value = volume;
-        audioSource.volume = volume;
+        audioSource.volume = volume * 0.4f;
 
         slider.onValueChanged.AddListener(SetVolume);
         DontDestroyOnLoad(audioSource);
@@ -24,7 +24,7 @@ public class VolumeManager : MonoBehaviour
 
     void SetVolume(float value)
     {
-        audioSource.volume = value;
+        audioSource.volume = value * 0.4f;
         volume = value;
         PlayerPrefs.SetFloat("Volume", value);
 		PlayerPrefs.Save();

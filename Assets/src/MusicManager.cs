@@ -52,6 +52,7 @@ public class MusicManager : MonoBehaviour
         else
             audioSource.volume = VolumeManager.Instance.audioSource.volume;
         audioSource.clip = newClip;
+        audioSource.volume = audioSource.volume * 0.4f;
         audioSource.Play();
     }
 
