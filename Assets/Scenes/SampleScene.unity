@@ -1638,7 +1638,7 @@ PrefabInstance:
     - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
       propertyPath: deadUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 399988509}
     - target: {fileID: 6255675298264996979, guid: f9df74aa985007748b55ab87c9fcefc4, type: 3}
       propertyPath: shadow
       value: 
