@@ -1,14 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jar : MonoBehaviour
 {
     static private int cheeseSaved = 0;
     public AudioClip sound;
-    bool ending = true;
-  
+    static int ending = 1;
+
     private void Awake()
     {
         cheeseSaved = PlayerPrefs.GetInt("Jar cheese", 0);
+        ending = PlayerPrefs.GetInt("ending", 1);
     }
   
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,10 +23,13 @@ public class Jar : MonoBehaviour
 		PlayerPrefs.SetInt("Jar cheese", cheeseSaved);
 		PlayerPrefs.Save();
 		GameManager.Instance.resetCheese();
-		if (cheeseSaved >= 1000 && ending == true)
-		{
-			Debug.Log("You won !");
-			ending = false;
+        if (cheeseSaved >= 1000 && ending == 1)
+        {
+            ending = 0;
+            PlayerPrefs.SetInt("ending", 0);
+		    PlayerPrefs.Save();
+            SceneManager.LoadScene("FinalCutscene");
+
 		}
 	}
 
