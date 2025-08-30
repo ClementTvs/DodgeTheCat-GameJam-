@@ -10,9 +10,16 @@ public class Table : MonoBehaviour
     public GameObject good750;
     public GameObject good1000;
 
+    private float lastSoundTime = 0f;
+    public float cooldown = 1f;
+
     private void OnCollisionEnter2D(Collision2D collider)
     {
+        if (Time.time - lastSoundTime >= cooldown)
+        {
             AudioSource.PlayClipAtPoint(sound, transform.position, VolumeManager.volume * 3f);
+            lastSoundTime = Time.time;
+        }
     }
     private void OnCollisionStay2D(Collision2D collider)
     {
